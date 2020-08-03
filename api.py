@@ -9,7 +9,7 @@ get_headers = {
     'User-agent': 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
     'Accept': 'application/json',
     'content-type': 'application/json',
-    'X-Auth-Token': '32951d7d-9377-471f-a825-95e8b84a87ad'
+    'X-Auth-Token': config.tinder_token
 }
 headers = get_headers.copy()
 
@@ -24,6 +24,7 @@ def get_auth_token(fb_auth_token, fb_user_id):
                         data=json.dumps(
                             {'facebook_token': fb_auth_token, 'facebook_id': fb_user_id})
                         )
+    return req.status_code
     try:
         tinder_auth_token = req.json()["token"]
         headers.update({"X-Auth-Token": tinder_auth_token})
@@ -37,9 +38,9 @@ def get_auth_token(fb_auth_token, fb_user_id):
 
 def authverif():
     res = get_auth_token(config.fb_access_token, config.fb_user_id)
-    if "error" in res:
-        return False
-    return True
+    print(res)
+    if res == 200: return True
+    return False
 
 
 def get_recommendations():
