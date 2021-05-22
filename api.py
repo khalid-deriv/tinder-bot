@@ -279,7 +279,7 @@ def fast_match_info():
       r = requests.get(url, headers=headers)
       count = r.headers['fast-match-count']
       # image is in the response but its in hex..
-      return count
+      return count, r
   except requests.exceptions.RequestException as e:
       print("Something went wrong. Could not get your fast-match count:", e)
 

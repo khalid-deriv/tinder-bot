@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/style.css') }}">
+    <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="{{ url_for('static',filename='js/upload.js') }}"></script>
+    <title>&#x1F610; RMF</title>
+</head>
+<body>
+    <div class="page-title">
+        <h1>Rate My Face</h1>
+    </div>
+    <div class="file-upload">
+        <div class="image-upload-wrap">
+            <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+            <div class="drag-text">
+                <h3>Drag and drop or click to upload</h3>
+            </div>
+        </div>
+        <div class="file-upload-content">
+            <img class="file-upload-image" src="#" alt="your image" />
+            <div class="image-title-wrap">
+                <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>
+            </div>
+        </div>
+        <div class="rate-content">
+            <button type="button" onclick="rateImage()" class="rate-button">Rate</button>
+        </div>
+        <div class="loading">
+            <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="rating">
+            <h3></h3>
+        </div>
+        <div class="error">
+            There was an error. Try with a clearer picture
+        </div>
+        <button type="button" onclick="again()" class="again">Try Again</button>
+    </div>
+
+</body>
+</html>

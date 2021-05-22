@@ -16,6 +16,7 @@ def rate(photos):
 
 while True:
 	recom = api.get_recommendations()
+	print(recom)
 	profiles = recom['results']
 
 	for profile in profiles:
