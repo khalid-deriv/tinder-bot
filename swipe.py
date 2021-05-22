@@ -11,6 +11,8 @@ def get_photos(photo_list):
 	return photos
 
 def rate(photos):
+	# The photo-rating model is still in progress. Using random rating for the demo
+	# r = model.rate(photos)
 	r = random()
 	return r
 
