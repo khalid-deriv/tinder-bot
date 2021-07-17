@@ -18,12 +18,12 @@ while True:
 			api.like(profile['_id'])
 			print("Prodile ID:", profile['_id'])
 			print("Rating:", face_rating)
-			print("Like!")
+			print("Like!\n\n\n")
 		else:
 			api.dislike(profile['_id'])
 			print("Prodile ID:", profile['_id'])
 			print("Rating:", face_rating)
-			print("Dislike!")
+			print("Dislike!\n\n\n")
 
 		sleep(5)
 

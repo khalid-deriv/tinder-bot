@@ -43,16 +43,11 @@ RUN cd ~ && \
     python3 setup.py install
 
 
-# Install Flask
-RUN cd ~ && \
-    pip3 install flask flask-cors
-
-
 # Copy web service script
 COPY . .
 
 
-# Install other requirements
+# Install requirements
 RUN pip3 install -r requirements.txt 
 
 # Set port
@@ -63,6 +58,6 @@ EXPOSE 8000
 # Start the web service
 ENTRYPOINT [ "python3" ]
 
-CMD [ "server.py" ]
+CMD [ "app/swipe.py" ]
 # CMD cd /root/ && \
 #     python3 facerec_service.py
